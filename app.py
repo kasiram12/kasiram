@@ -31,7 +31,7 @@ if uploaded_file is not None:
     class_colors = [np.array(every_color.split(",")).astype("int") for every_color in class_colors]
     class_colors = np.array(class_colors)
     class_colors = np.tile(class_colors, (16, 1))
-    yolo_model = cv2.dnn.readNetFromDarknet('yolov3.cfg', 'yolov3.weights')
+    yolo_model = cv2.dnn.readNetFromDarknet('master/yolov3.cfg', 'master/yolov3.weights')
     yolo_layers = yolo_model.getLayerNames()
     yolo_output_layer = [yolo_layers[yolo_layer - 1] for yolo_layer in yolo_model.getUnconnectedOutLayers()]
     yolo_model.setInput(img_blob)
